@@ -49,7 +49,6 @@ export const Navbar = () => {
             </NavBarList>
             <NavBarList>
                 <NavBarListItem>
-                    {" "}
                     <UserIcon className="w-4 h-4" />
                     User
                 </NavBarListItem>
