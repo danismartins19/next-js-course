@@ -5,16 +5,20 @@ import {
     RouteIcon,
     UserIcon,
 } from "../Icons/Icons";
+import { cn } from "@/helpers/cn";
 
-const NavBarList = ({ children, className }: { children: React.ReactNode, className?: string }) => {
+type NavbarListProps = React.ComponentProps<"ul">
+type NavbarListItemProps = React.ComponentProps<"li">
+
+const NavBarList = ({ children, className }: NavbarListProps) => {
     return (
-        <ul className={`${className} my-4 border-t border-indigo-400/20 hover:border-indigo-400/40`}>
+        <ul className={cn('my-4 border-t border-indigo-400/20 hover:border-indigo-400/40', className)}>
             {children}
         </ul>
     );
 };
 
-const NavBarListItem = ({ children }: { children: React.ReactNode }) => {
+const NavBarListItem = ({ children }: NavbarListItemProps) => {
     return (
         <li className="my-2 rounder-lg bg-transparent-900 px-2 hover:bg-indigo-400/40 cursor-pointer flex gap-2 items-center hover:text-slate-100">
             {children}
@@ -55,4 +59,4 @@ export const Navbar = () => {
             </NavBarList>
         </nav>
     );
-};
+};    
